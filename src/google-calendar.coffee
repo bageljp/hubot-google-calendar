@@ -218,13 +218,20 @@ module.exports = (robot) ->
   robot.respond /cal list/i, (robot) ->
     listCalendars robot
 
+  robot.respond /cal get$/i, (robot) ->
+    options = {}
+    options.calendar = config.calendars.shinbashi
+    options.timeMin = moment().startOf('week')
+    options.timeMax = moment().endOf('week')
+    getCredentials getEvents, options, robot
+
   robot.respond /cal get ([a-zA-Z0-9]+)$/i, (robot) ->
     if not checkCalendarId robot.match[1], robot
       return
     options = {}
     options.calendar = config.calendars[robot.match[1]]
-    options.timeMin = moment().startOf('day')
-    options.timeMax = moment().endOf('day')
+    options.timeMin = moment().startOf('week')
+    options.timeMax = moment().endOf('week')
     getCredentials getEvents, options, robot
 
   robot.respond /cal get (.*) (.*)/i, (robot) ->
