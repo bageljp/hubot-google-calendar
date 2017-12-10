@@ -202,7 +202,7 @@ help = (robot) ->
     Google Calendarの予定を表示します。
     ```
     #{process.env.HUBOT_SLACK_BOTNAME} cal list - 指定可能なGoogle Calendarの一覧
-    #{process.env.HUBOT_SLACK_BOTNAME} cal get [calendarId] - Google Calendarから指定したカレンダーの今週の予定を取得
+    #{process.env.HUBOT_SLACK_BOTNAME} cal get [calendarId] - Google Calendarから指定したカレンダーの今日の予定を取得
     #{process.env.HUBOT_SLACK_BOTNAME} cal get {calendarId} week - Google Calendarから指定したカレンダーの今週の予定を取得
     #{process.env.HUBOT_SLACK_BOTNAME} cal get {calendarId} month - Google Calendarから指定したカレンダーの今月の予定を取得
     #{process.env.HUBOT_SLACK_BOTNAME} cal get {calendarId} {yyyymmdd} - Google Calendarから指定したカレンダーの今日からyyyymmddまでの予定を取得
