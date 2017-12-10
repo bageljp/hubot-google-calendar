@@ -1,0 +1,19 @@
+{
+  "name": "hubot-google-calendar",
+  "description": "hubot scripts with Google Calendar API",
+  "version": "0.0.1",
+  "author": "Keisuke Kadoyama <kadoyama.keisuke@gmail.com>",
+  "license": "ISC",
+  "main": "index.coffee",
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
+  "dependencies": {
+    "google-auth-library": "^0.12.0",
+    "googleapis": "^23.0.0",
+    "hubot": "^2.19.0",
+    "js-yaml": "^3.10.0",
+    "moment-timezone": "^0.5.14"
+  }
+}
