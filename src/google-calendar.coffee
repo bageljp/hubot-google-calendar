@@ -140,9 +140,9 @@ getEvents = (auth, options, robot) ->
   calendarId = options.calendar.id
   timezone = config.timezone or "UTC"
   if timeMin.tz(timezone).format("YYYY-MM-DD") == timeMax.tz(timezone).format("YYYY-MM-DD")
-    message = "#{timeMin.tz(timezone).format("YYYY-MM-DD")} のGoogle Calendar(#{calendarId})の予定です。\n```\n"
+    message = "#{timeMin.tz(timezone).format("YYYY-MM-DD(ddd)")} のGoogle Calendar(#{calendarId})の予定です。\n```\n"
   else
-    message = "#{timeMin.tz(timezone).format("YYYY-MM-DD")} - #{timeMax.tz(timezone).format("YYYY-MM-DD")} のGoogle Calendar(#{calendarId})の予定です。\n```\n"
+    message = "#{timeMin.tz(timezone).format("YYYY-MM-DD(ddd)")} - #{timeMax.tz(timezone).format("YYYY-MM-DD(ddd)")} のGoogle Calendar(#{calendarId})の予定です。\n```\n"
 
   calendar.events.list {
     auth: auth
@@ -193,7 +193,6 @@ getEvents = (auth, options, robot) ->
           message = "```\n"
         message = "#{message}#{start_msg} - #{end_msg}: <#{event.htmlLink}|#{event.summary}>\n"
         i++
-      #console.log "#{message}があります。"
       robot.send "#{message}```"
     return
   return
